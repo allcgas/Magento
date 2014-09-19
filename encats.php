@@ -2,7 +2,7 @@
 
 require_once rtrim(dirname(__FILE__), '/').'/../../abstract.php';
 
-class Mage_Shell_Create extends Orb_Shell_Abstract
+class Mage_Shell_Create extends Generic_Abstract
 {
 
 // public $_parentCatBuffer = array();
@@ -28,12 +28,11 @@ Mage::app()->setCurrentStore(Mage::getModel('core/store')
 ->load(Mage_Core_Model_App::ADMIN_STORE_ID));
 
 if ($this->getArg('r')) {
-echo "[-";
-$this->categoriesCollectionIds = $this->getCategories();
-// $this->categoriesCollectionIds[]=3277; 
-$this->processCat($this->categoriesCollectionIds, 1); 
-echo "-]\n";
-
+    echo "[-";
+    $this->categoriesCollectionIds = $this->getCategories();
+    // $this->categoriesCollectionIds[]=3277; 
+    $this->processCat($this->categoriesCollectionIds, 1); 
+    echo "-]\n";
 }
 
 }
